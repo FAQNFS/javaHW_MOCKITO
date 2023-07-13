@@ -90,4 +90,30 @@ public class MovieManagerTest {
         String[] actual = manager.findLast();
         Assertions.assertArrayEquals(expected, actual);
     }
+
+    @Test
+    public void showingTheLatestFilms4() {
+        MovieManager manager = new MovieManager(3);
+
+        manager.add("Movie 1");
+        manager.add("Movie 2");
+
+        String[] expected = {"Movie 2", "Movie 1"};
+        String[] actual = manager.findLast();
+        Assertions.assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void showingTheLatestFilms5() {
+        MovieManager manager = new MovieManager(3);
+
+        manager.add("Movie 1");
+        manager.add("Movie 2");
+        manager.add("Movie 3");
+        manager.add("Movie 4");
+
+        String[] expected = {"Movie 4", "Movie 3", "Movie 2"};
+        String[] actual = manager.findLast();
+        Assertions.assertArrayEquals(expected, actual);
+    }
 }
